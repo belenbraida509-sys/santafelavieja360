@@ -397,7 +397,7 @@ personaje.style.pointerEvents = "none";
 
 scenes[0].scene.hotspotContainer().createHotspot(
   personaje,
-  { yaw: 0.6, pitch: 0.1
+  { yaw: 0.4, pitch: 0.1
    }
 );
 personaje.style.position = "relative";
