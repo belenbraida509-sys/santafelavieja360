@@ -894,3 +894,51 @@ body.cardboard-mode .info-hotspot-modal-text {
   font-size: 13px !important;
   line-height: 1.4 !important;
 }
+
+/* CONFIGURACIÓN FINAL CARDBOARD */
+
+#panoDerecho {
+  display: none;
+}
+
+body.cardboard-mode #pano,
+body.cardboard-mode #panoDerecho {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  width: 50vw !important;
+  overflow: hidden !important;
+}
+
+body.cardboard-mode #pano {
+  left: 0 !important;
+}
+
+body.cardboard-mode #panoDerecho {
+  left: 50% !important;
+  z-index: 1;
+}
+
+body.cardboard-mode #cardboardButton,
+.sceneName,
+body.cardboard-mode #titleBar,
+body.cardboard-mode #autorotateToggle {
+  display: none !important;
+}
+
+/* Tarjetas más pequeñas en Cardboard */
+body.cardboard-mode .info-hotspot-modal {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+}
+
+body.cardboard-mode .info-hotspot-modal .info-hotspot-text {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  overflow-y: auto !important;
+}
