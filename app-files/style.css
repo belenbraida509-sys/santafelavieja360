@@ -885,6 +885,31 @@ body.cardboard-mode .viewControlButton {
   display: none !important;
 }
 
+/* =====================================
+   ADAPTACIÓN A CELULARES
+   SANTA FE LA VIEJA 360
+   ===================================== */
+
+/* Solo dispositivos táctiles de pantalla pequeña */
+@media (hover: none) and (pointer: coarse)
+       and (max-width: 950px) {
+
+  /* Personajes y carteles del panorama */
+  #pano img[src*="personajes/"],
+  #panoDerecho img[src*="personajes/"] {
+    max-width: clamp(110px, 28vw, 180px) !important;
+    height: auto !important;
+  }
+}
+
+/* CARDBOARD: dos mitades de pantalla */
+body.cardboard-mode #pano img[src*="personajes/"],
+body.cardboard-mode #panoDerecho img[src*="personajes/"] {
+  max-width: clamp(90px, 17vw, 145px) !important;
+  height: auto !important;
+}
+
+
 /* OCULTAR TÍTULO */
 
 .sceneName {
