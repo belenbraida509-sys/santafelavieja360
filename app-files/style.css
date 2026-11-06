@@ -884,3 +884,13 @@ body.cardboard-mode #cardboardButton,
 body.cardboard-mode .sceneName {
   display: none !important;
 }
+/* Evitar que las tarjetas se salgan de cada mitad */
+body.cardboard-mode .info-hotspot-modal {
+  max-width: 90% !important;
+  box-sizing: border-box;
+}
+
+body.cardboard-mode .info-hotspot-modal-text {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
