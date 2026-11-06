@@ -218,6 +218,29 @@ personajesOriginales.forEach(function (hotspot) {
   });
 });
 
+/* Igualar las posiciones de los carteles en ambos ojos */
+setInterval(function () {
+  if (!document.body.classList.contains("cardboard-mode")) {
+    return;
+  }
+
+  var originales = window.visorIzquierdo.scene()
+    .hotspotContainer().listHotspots();
+
+  var copias = escenaDerecha.hotspotContainer()
+    .listHotspots();
+
+  originales.forEach(function (original, i) {
+    if (!copias[i]) return;
+
+    var posicion = original.position();
+    copias[i].setPosition({
+      yaw: posicion.yaw,
+      pitch: posicion.pitch
+    });
+  });
+}, 100);
+
 // Sincronizar visibilidad de personajes
 setInterval(function () {
   if (!document.body.classList.contains("cardboard-mode")) {
