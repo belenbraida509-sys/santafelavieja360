@@ -397,7 +397,7 @@ personaje.style.pointerEvents = "none";
 
 scenes[0].scene.hotspotContainer().createHotspot(
   personaje,
-  { yaw: 0.6, pitch: 0.1
+  { yaw: 0.5, pitch: 0.1
    }
 );
 personaje.style.position = "relative";
@@ -420,7 +420,7 @@ infoconstrucciones2.style.cssText = `
 infoconstrucciones2.style.visibility = "hidden";
 scenes[0].scene.hotspotContainer().createHotspot(
   infoconstrucciones2,
-  { yaw: -0.6, pitch: -0.40
+  { yaw: 0.65, pitch: -0.40
    }
 );
 
