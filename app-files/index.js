@@ -80,6 +80,25 @@ window.visorIzquierdo = viewer;
 
     var limiter = Marzipano.RectilinearView.limit.traditional(data.faceSize, 100*Math.PI/180, 120*Math.PI/180);
     var view = new Marzipano.RectilinearView(data.initialViewParameters, limiter);
+    // Adaptar el campo de visión al tamaño de pantalla
+function adaptarPanorama() {
+  var ancho = window.innerWidth;
+  var fov;
+
+  if (document.body.classList.contains("cardboard-mode")) {
+    fov = 100 * Math.PI / 180;
+  } else if (ancho <= 600) {
+    fov = 95 * Math.PI / 180;
+  } else {
+    fov = data.initialViewParameters.fov;
+  }
+
+  view.setFov(fov);
+}
+
+window.addEventListener("resize", adaptarPanorama);
+window.addEventListener("orientationchange", adaptarPanorama);
+    setTimeout(adaptarPanorama, 300);
 
     var scene = viewer.createScene({
       source: source,
