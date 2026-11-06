@@ -852,6 +852,17 @@ setInterval(function () {
     infoCortejo.style.visibility = "hidden";
   }
 }, 100);
+  
+/* Subir todos los cuadros de información */
+[
+  infoconstrucciones2,
+  infoAlfareria,
+  infoMercado,
+  infoMate,
+  infoCortejo
+].forEach(function(cuadro) {
+  cuadro.style.marginTop = "-40px";
+});
 switchScene(scenes[0]);
 
 })();
