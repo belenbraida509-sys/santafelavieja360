@@ -420,7 +420,7 @@ infoconstrucciones2.style.cssText = `
 infoconstrucciones2.style.visibility = "hidden";
 scenes[0].scene.hotspotContainer().createHotspot(
   infoconstrucciones2,
-  { yaw: 0.65, pitch: -0.25
+  { yaw: 0.4, pitch: -0.25
    }
 );
 
