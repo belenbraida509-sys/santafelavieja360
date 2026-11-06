@@ -129,7 +129,7 @@ function procesarMovimiento(evento) {
 
 // Botón Cardboard
 cardboardButton.addEventListener("click", async function () {
-  alert("El botón Cardboard funciona");
+
   const activar =
     !document.body.classList.contains("cardboard-mode");
 
