@@ -3,30 +3,33 @@ console.log("Cardboard conectado correctamente");
 
 const cardboardButton = document.getElementById("cardboardButton");
 
+
 cardboardButton.addEventListener("click", async function () {
-  if (!document.body.classList.contains("cardboard-mode")) {
+  const activar = !document.body.classList.contains("cardboard-mode");
+
+  if (activar) {
     if (typeof DeviceOrientationEvent !== "undefined" &&
         typeof DeviceOrientationEvent.requestPermission === "function") {
       try {
         const permiso = await DeviceOrientationEvent.requestPermission();
-
         if (permiso !== "granted") {
-          alert("Necesitamos permiso de movimiento para usar el Cardboard.");
+          alert("No se concedió permiso para el movimiento.");
           return;
         }
       } catch (error) {
-        alert("No se pudo activar el sensor de movimiento.");
+        alert("No se pudo activar el giroscopio.");
         return;
       }
     }
+  }
 
-    giroscopioActivo = true;
-    orientacionInicial = null;
+  document.body.classList.toggle("cardboard-mode", activar);
+
+  giroscopioActivo = activar;
+  orientacionInicial = null;
+
+  if (activar) {
     activarGiroscopio();
-    document.body.classList.add("cardboard-mode");
-  } else {
-    giroscopioActivo = false;
-    document.body.classList.remove("cardboard-mode");
   }
 
   setTimeout(function () {
@@ -34,6 +37,7 @@ cardboardButton.addEventListener("click", async function () {
     visorDerecho.updateSize();
   }, 100);
 });
+
 
 setTimeout(function () {
   visorDerecho.updateSize();
