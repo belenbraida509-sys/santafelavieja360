@@ -420,7 +420,7 @@ infoconstrucciones2.style.cssText = `
 infoconstrucciones2.style.visibility = "hidden";
 scenes[0].scene.hotspotContainer().createHotspot(
   infoconstrucciones2,
-  { yaw: 0.65, pitch: -0.25
+  { yaw: -0.40, pitch: -0.25
    }
 );
 
@@ -518,7 +518,7 @@ infoAlfareria.style.cssText = `
 
 scenes[0].scene.hotspotContainer().createHotspot(
   infoAlfareria,
-  { yaw: -2.2, pitch: -0.2
+  { yaw: -2.2, pitch: -0.40
    }
 );
 
@@ -597,7 +597,7 @@ infoMercado.style.cssText = `
 
 scenes[0].scene.hotspotContainer().createHotspot(
   infoMercado,
-  { yaw: 1.6, pitch: -0.1
+  { yaw: 1.6, pitch: -0.35
    }
 );
 
@@ -705,7 +705,7 @@ infoMate.style.cssText = `
 
 scenes[0].scene.hotspotContainer().createHotspot(
   infoMate,
-  { yaw: 2.7, pitch: -0.1 }
+  { yaw: 2.7, pitch: -0.35 }
 );
 var tiempoMate = null;
 var mateVisible = false;
@@ -796,7 +796,7 @@ infoCortejo.style.cssText = `
 
 scenes[0].scene.hotspotContainer().createHotspot(
   infoCortejo,
-  { yaw: -0.7, pitch: -0.25 }
+  { yaw: -0.7, pitch: -0.40 }
 );
 var tiempoCortejo = null;
 var cortejoVisible = false;
@@ -853,16 +853,7 @@ setInterval(function () {
   }
 }, 100);
   
-/* Subir todos los cuadros de información */
-[
-  infoconstrucciones2,
-  infoAlfareria,
-  infoMercado,
-  infoMate,
-  infoCortejo
-].forEach(function(cuadro) {
-  cuadro.style.marginTop = "-40px";
-});
+
 switchScene(scenes[0]);
 
 })();
