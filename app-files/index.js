@@ -854,7 +854,8 @@ setInterval(function () {
 }, 100);
   
 
-/* Subir los cinco cuadros de información */
+/* SUBIR TODOS LOS CARTELES DE INFORMACIÓN */
+
 [
   infoconstrucciones2,
   infoAlfareria,
@@ -862,20 +863,25 @@ setInterval(function () {
   infoMate,
   infoCortejo
 ].forEach(function(cuadro) {
-  var hotspot = scenes[0].scene.hotspotContainer()
-    .listHotspots()
-    .find(function(h) {
-      return h.domElement() === cuadro;
-    });
+
+  var hotspots = scenes[0].scene
+    .hotspotContainer()
+    .listHotspots();
+
+  var hotspot = hotspots.find(function(h) {
+    return h.domElement() === cuadro;
+  });
 
   if (hotspot) {
     var posicion = hotspot.position();
+
     hotspot.setPosition({
       yaw: posicion.yaw,
-      pitch: posicion.pitch + 0.15
+      pitch: posicion.pitch + 0.35
     });
   }
 });
+
 
 switchScene(scenes[0]);
 
