@@ -272,3 +272,43 @@ window.addEventListener("orientationchange", function () {
     visorDerecho.updateSize();
   }, 300);
 });
+
+/* Centrar los carteles de información en ambos ojos */
+
+const nombresCarteles = [
+  "infoconstrucciones2.png",
+  "Alfareríainfo.png",
+  "comeciantesinfo.png",
+  "El mateinfo.png",
+  "infocortejo.png"
+];
+
+function centrarCarteles() {
+  const modoCardboard =
+    document.body.classList.contains("cardboard-mode");
+
+  document.querySelectorAll("img").forEach(function(img) {
+    const esCartel = nombresCarteles.some(function(nombre) {
+      return img.src.includes(nombre);
+    });
+
+    if (!esCartel) return;
+
+    if (modoCardboard) {
+      img.style.position = "fixed";
+      img.style.left = "50%";
+      img.style.top = "50%";
+      img.style.transform = "translate(-50%, -50%)";
+      img.style.width = "min(75%, 250px)";
+      img.style.maxHeight = "75%";
+      img.style.objectFit = "contain";
+    } else {
+      img.style.position = "";
+      img.style.left = "";
+      img.style.top = "";
+    }
+  });
+}
+
+setInterval(centrarCarteles, 200);
+
