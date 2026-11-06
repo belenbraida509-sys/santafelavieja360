@@ -415,12 +415,12 @@ infoconstrucciones2.style.cssText = `
   border-radius: 20px;
   visibility: hidden;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
 `;
 infoconstrucciones2.style.visibility = "hidden";
 scenes[0].scene.hotspotContainer().createHotspot(
   infoconstrucciones2,
-  { yaw: 0.75, pitch: -0.40
+  { yaw: 0.5, pitch: -0.40
    }
 );
 
