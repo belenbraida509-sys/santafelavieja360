@@ -937,6 +937,16 @@ body.cardboard-mode .info-hotspot-modal {
   overflow: hidden !important;
 }
 
+/* Subir cuadros de información en Cardboard */
+body.cardboard-mode .info-hotspot-modal .info-hotspot-header {
+  top: 30px !important;
+}
+
+body.cardboard-mode .info-hotspot-modal .info-hotspot-text {
+  top: 80px !important;
+}
+
+
 body.cardboard-mode .info-hotspot-modal .info-hotspot-text {
   font-size: 12px !important;
   line-height: 1.35 !important;
