@@ -63,10 +63,10 @@ setInterval(function () {
   const vistaIzquierda = escenaIzquierda.view();
 
   vistaDerecha.setParameters({
-    yaw: vistaIzquierda.yaw(),
-    pitch: vistaIzquierda.pitch(),
-    fov: 65 * Math.PI / 180
-  });
+  yaw: vistaIzquierda.yaw(),
+  pitch: vistaIzquierda.pitch(),
+  fov: vistaIzquierda.fov()
+});
 }, 30);
 const escenaIzquierda = window.visorIzquierdo.scene();
 
