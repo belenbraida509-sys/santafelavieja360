@@ -39,10 +39,7 @@ cardboardButton.addEventListener("click", async function () {
 });
 
 
-setTimeout(function () {
-  visorDerecho.updateSize();
-}, 100);
-});const panoDerecho = document.getElementById("panoDerecho");
+const panoDerecho = document.getElementById("panoDerecho");
 
 const visorDerecho = new Marzipano.Viewer(panoDerecho);
 
