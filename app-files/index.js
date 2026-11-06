@@ -397,7 +397,7 @@ personaje.style.pointerEvents = "none";
 
 scenes[0].scene.hotspotContainer().createHotspot(
   personaje,
-  { yaw: 0.4, pitch: 0.1
+  { yaw: 0.6, pitch: 0.1
    }
 );
 personaje.style.position = "relative";
@@ -420,7 +420,7 @@ infoconstrucciones2.style.cssText = `
 infoconstrucciones2.style.visibility = "hidden";
 scenes[0].scene.hotspotContainer().createHotspot(
   infoconstrucciones2,
-  { yaw: 0.4, pitch: -0.25
+  { yaw: 0.65, pitch: -0.25
    }
 );
 
@@ -853,9 +853,7 @@ setInterval(function () {
   }
 }, 100);
   
-
-/* SUBIR TODOS LOS CARTELES DE INFORMACIÓN */
-
+/* Subir todos los cuadros de información */
 [
   infoconstrucciones2,
   infoAlfareria,
@@ -863,26 +861,8 @@ setInterval(function () {
   infoMate,
   infoCortejo
 ].forEach(function(cuadro) {
-
-  var hotspots = scenes[0].scene
-    .hotspotContainer()
-    .listHotspots();
-
-  var hotspot = hotspots.find(function(h) {
-    return h.domElement() === cuadro;
-  });
-
-  if (hotspot) {
-    var posicion = hotspot.position();
-
-    hotspot.setPosition({
-      yaw: posicion.yaw,
-      pitch: posicion.pitch + 0.35
-    });
-  }
+  cuadro.style.marginTop = "-40px";
 });
-
-
 switchScene(scenes[0]);
 
 })();
