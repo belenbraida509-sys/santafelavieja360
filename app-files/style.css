@@ -858,3 +858,6 @@ body.cardboard-mode #panoDerecho {
 .sceneName {
   display: none !important;
 }
+body.cardboard-mode #cardboardButton {
+  display: none !important;
+}
