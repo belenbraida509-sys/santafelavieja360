@@ -1,15 +1,40 @@
+
 console.log("Cardboard conectado correctamente");
+
 const cardboardButton = document.getElementById("cardboardButton");
 
-cardboardButton.addEventListener("click", function () {
-document.body.classList.toggle("cardboard-mode");
-if (document.body.classList.contains("cardboard-mode")) {
-  giroscopioActivo = true;
-  orientacionInicial = null;
-  activarGiroscopio();
-} else {
-  giroscopioActivo = false;
-}
+cardboardButton.addEventListener("click", async function () {
+  if (!document.body.classList.contains("cardboard-mode")) {
+    if (typeof DeviceOrientationEvent !== "undefined" &&
+        typeof DeviceOrientationEvent.requestPermission === "function") {
+      try {
+        const permiso = await DeviceOrientationEvent.requestPermission();
+
+        if (permiso !== "granted") {
+          alert("Necesitamos permiso de movimiento para usar el Cardboard.");
+          return;
+        }
+      } catch (error) {
+        alert("No se pudo activar el sensor de movimiento.");
+        return;
+      }
+    }
+
+    giroscopioActivo = true;
+    orientacionInicial = null;
+    activarGiroscopio();
+    document.body.classList.add("cardboard-mode");
+  } else {
+    giroscopioActivo = false;
+    document.body.classList.remove("cardboard-mode");
+  }
+
+  setTimeout(function () {
+    window.visorIzquierdo.updateSize();
+    visorDerecho.updateSize();
+  }, 100);
+});
+
 setTimeout(function () {
   visorDerecho.updateSize();
 }, 100);
