@@ -122,8 +122,8 @@ function procesarMovimiento(evento) {
   yaw = Math.atan2(Math.sin(yaw), Math.cos(yaw));
 
   escena.view().setParameters({
-    yaw: yaw,
-    pitch: posicion.pitch
+    yaw: -yaw,
+    pitch: -posicion.pitch
   });
 }
 
