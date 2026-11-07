@@ -915,3 +915,90 @@ body.cardboard-mode #panoDerecho img[src*="personajes/"] {
 .sceneName {
   display: none !important;
 }
+
+/* PANTALLA DE BIENVENIDA */
+
+#pantallaInicio {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #f2e4d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.bienvenidaContenido {
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.bienvenidaContenido h1 {
+  margin: 0;
+  font-size: clamp(38px, 11vw, 60px);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #32180d;
+}
+
+.bienvenidaSubtitulo {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #32180d;
+}
+
+#pantallaInicio #cardboardButton {
+  position: static !important;
+  display: block;
+  transform: none !important;
+  width: 100%;
+  max-width: 350px;
+  padding: 18px;
+  border: none;
+  border-radius: 40px;
+  background: #b94719;
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bienvenidaInstruccion {
+  color: #32180d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bienvenidaInstruccion p {
+  margin: 4px 0 0;
+}
+
+.iconoRotacion {
+  font-size: 38px;
+}
+
+/* OCULTAR BIENVENIDA AL ACTIVAR CARDBOARD */
+
+body.cardboard-mode #pantallaInicio {
+  display: none !important;
+}
+
+/* ADAPTACIÓN A CELULARES PEQUEÑOS */
+
+@media (max-height: 650px) {
+  .bienvenidaContenido {
+    gap: 14px;
+  }
+}
