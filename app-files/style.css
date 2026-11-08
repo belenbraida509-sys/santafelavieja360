@@ -988,9 +988,57 @@ body.cardboard-mode #panoDerecho img[src*="personajes/"] {
 }
 
 .iconoRotacion {
-  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin: 8px 0;
+  color: #32180d;
 }
 
+.celular {
+  border: 3px solid #32180d;
+  border-radius: 7px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.celular.vertical {
+  width: 34px;
+  height: 58px;
+}
+
+.celular.horizontal {
+  width: 58px;
+  height: 34px;
+}
+
+.celular span {
+  position: absolute;
+  background: #32180d;
+  border-radius: 3px;
+}
+
+.celular.vertical span {
+  width: 10px;
+  height: 3px;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.celular.horizontal span {
+  width: 3px;
+  height: 10px;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.flechaGiro {
+  font-size: 30px;
+  font-weight: 700;
+}
 /* OCULTAR BIENVENIDA AL ACTIVAR CARDBOARD */
 
 body.cardboard-mode #pantallaInicio {
