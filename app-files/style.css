@@ -977,10 +977,12 @@ body.cardboard-mode #panoDerecho img[src*="personajes/"] {
 
 .bienvenidaInstruccion {
   color: #32180d;
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 700;
   line-height: 1.5;
+  margin-top: 8px;
+  max-width: 340px;
 }
-
 .bienvenidaInstruccion p {
   margin: 4px 0 0;
 }
